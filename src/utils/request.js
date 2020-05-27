@@ -94,7 +94,7 @@ export function request (opts, onsuccess, onerror, onprogress) {
           if (format === 'xml') {
             res = evt.target.responseXML
           } else if (format === 'text') {
-            res = evt.target.responseText
+            res = evt.target ? evt.target.responseText : xhr.responseText
           } else if (format === 'json') {
             try {
               res = JSON.parse(evt.target.response)
